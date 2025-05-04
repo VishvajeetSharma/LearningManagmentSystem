@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<style>
+    .cardzoom {
+        transition: all ease 1s
+    }
+
+        .cardzoom:hover {
+            transform: scale(1.1);
+            transition: 1.5s
+        }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="text-center fs-2 mb-4">Dash<b class="txt-mycolor1">Board</b></div>
+            <div class="col-sm-4">
+                <div class="card  shadow-lg p-2 rounded-2" style="width: 18rem;">
+                    <img src="~/Content/images/user.jpg" class="rounded-circle card-img-top img-fluid mx-auto" alt="user image" style="max-height:120px; max-width:120px;">
+                    <div class="card-body ps-3">
+                        <h5 class="card-title">V Sharma</h5>
+                        <h5 class="card-title">vsharma@gmail.com</h5>
+                        <h5 class="card-title">+91-7237024533</h5>
+                        <a href="#" class="btn bg-mycolor2">Update Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="row mt-4">
+                    <div class="col-sm-3">
+                        <a href="~/admin/addbatch">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-users fs-3"></i>
+                                <h4>Add<br />Batch</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <a href="~/admin/addvideocategory">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-play fs-3"></i>
+                                <h4>Add Video Category</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <a href="~/admin/addvideo">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-play fs-3"></i>
+                                <h4>Add<br />Video</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-sm-3">
+                        <a href="~/admin/addassignment">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-list-check fs-3"></i>
+                                <h4>Add Assignment</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <a href="~/admin/manageassignment">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-bars-progress fs-3"></i>
+                                <h4>Manage Assignment</h4>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <a href="~/admin/notes">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-book fs-3"></i>
+                                <h4>Add<br />Notes</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-sm-3">
+                        <a href="~/admin/manageenquiry">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-bars-progress fs-3"></i>
+                                <h4>Manage Enquiry</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <a href="~/admin/managestudent">
+                            <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                                <i class="fa-solid fa-bars-staggered fs-3"></i>
+                                <h4>Manage Student</h4>
+                            </div>
+                        </a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "ManageEnquiry";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row fs-3 pt-1 m-3 text-center"> <span>Manage <b class="txt-mycolor1">Enquery</b></span></div>
+    <div class="row">
+        <table class="table table-bordered table-hover" id="myTable">
+            <thead class="table-dark">
+                <tr>
+                    <td>Sr</td>
+                    <td>Name</td>
+                    <td>Mobile</td>
+                    <td>EmailId</td>
+                    <td>Subject</td>
+                    <td>Message</td>
+                    <td>Enquery Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (ViewBag.table.Rows.Count > 0)
+                {
+                    foreach (var row in ViewBag.table.Rows)
+                    {
+                        <tr>
+                            <td>@row["Sr"]</td>
+                            <td>@row["Name"]</td>
+                            <td>@row["MobileNumber"]</td>
+                            <td>@row["EmailId"]</td>
+                            <td>@row["Subject"]</td>
+                            <td>@row["Message"]</td>
+                            <td>@row["EnqDate"]</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

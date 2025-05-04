@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "AddVideo Category";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head>
+    <title>Manage Video Video Category</title>
+    <style>
+        .heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 2);
+        }
+
+        .form-container {
+            padding: 20px;
+            background-color: #f8f0fa;
+            border: 8px;
+        }
+
+        .table-container {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row fs-3 pt-1 m-3 text-center"> <span>Add and Manage <b class="txt-mycolor1">Video Category</b></span></div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-container">
+                    <h4 class="mb-4">Add <b class="txt-mycolor2">Video Category</b></h4>
+                    <form action="/admin/savevideocategory" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="videoCategoryName" class="form-label">Video Category Name:</label>
+                            <input type="text" class="form-control" id="videoCategoryName" name="txt_category" placeholder="Enter Video Category Name" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="thumbNail" class="form-label">Thumb Nail:</label>
+                            <input type="file" class="form-control" id="thumbNail" name="file_thumbNail" />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn bg-mycolor2">Add Video Category</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="table-container">
+                    <h4 class="col-md-4">Manage <b class="txt-mycolor2">Video Category</b></h4>
+                    <table class="table table-bordered table-hover" id="myTable">
+                        <thead class="table-dark text-uppercase">
+                            <tr>
+                                <th>Sr</th>
+                                <th>Video Category Name</th>
+                                <th>Video Category Picture</th>
+                                <th>Added On</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.videocattable.Rows.Count > 0)
+                            {
+                                foreach (var row in ViewBag.videocattable.Rows)
+                                {
+                                    <tr>
+                                        <td>@row[0]</td>
+                                        <td>@row[1]</td>
+                                        <td><img src="~/Content/categorypic/@row[2]" height="60" width="80" /></td>
+                                        <td>@row[3]</td>
+                                        <td>
+                                            <a href="/admin/deletecat?Category=@row["CetegoryName"]">
+                                                <button class="btn bg-mycolor2">DELETE</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

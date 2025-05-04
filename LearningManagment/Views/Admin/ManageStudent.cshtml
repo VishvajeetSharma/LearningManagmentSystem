@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ManageStudent";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row fs-3 pt-1 m-3 text-center"> <span>Manage <b class="txt-mycolor1">Students</b></span></div>
+    <div class="row">
+        <div class="col-sm-12 mx-3">
+            <table class="table table-bordered table-hover text-center" id="myTable">
+                <thead class="table-dark">
+                    <tr>
+                        <td>Name</td>
+                        <td>Mobile Number</td>
+                        <td>Email Id</td>
+                        <td>Password</td>
+                        <td>Course & Branch</td>
+                        <td>Year</td>
+                        <td>Picture</td>
+                        <td>Batch Name</td>
+                        <td>Status</td>
+                        <td>Reg. Date</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.table.Rows.Count > 0)
+                    {
+                        foreach (var row in ViewBag.table.Rows)
+                        {
+                            <tr>
+                                <td>@row["Name"]</td>
+                                <td>@row["Mobile"]</td>
+                                <td>@row["EmailId"]</td>
+                                <td>@row["Password"]</td>
+                                <td>@row["Course & Branch"]</td>
+                                <td>@row["Year"]</td>
+                                <td><img src="~/Content/stddatapic/@row["Picture"]" height="50" width="50" /></td>
+                                <td>@row[11]</td>
+                                <td>
+                                    <a href="/admin/updatestatus?EmailId=@row["EmailId"]&Status=@(Convert.ToInt32(row[8]))">
+                                        <button class="btn bg-mycolor2">@row[8]</button>
+                                    </a>
+                                </td>
+                                <td>@row["RegDate"]</td>
+                            </tr>
+                        }
+                     }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

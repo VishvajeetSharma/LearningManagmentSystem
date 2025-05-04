@@ -1,0 +1,832 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/css/all.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        :root {
+            --color1: rgb(231, 134, 80);
+            --color2: rgb(85, 125, 203);
+            --color3: blue;
+            --color4: rgb(85, 125, 203, .45);
+        }
+
+        .bg-mycolor1 {
+            background-color: var(--color1);
+        }
+
+        .bg-mycolor2 {
+            background-color: var(--color2);
+        }
+
+        .bg-mycolor3 {
+            background-color: var(--color3);
+        }
+
+        .bg-mycolor4 {
+            background-color: var(--color4);
+        }
+
+        .txt-mycolor1 {
+            color: var(--color1);
+        }
+
+        .txt-mycolor2 {
+            color: var(--color2);
+        }
+        .ic {
+            font-size: 18px;
+            margin-right: 20px;
+            width: 20px;
+            line-height: 20px;
+            transition: transform .5s ease-in-out;
+        }
+            .ic:hover {
+                transform: scale(1.5);
+            }
+        .t1{
+            font-size: 14px;
+        }
+        .t1 a{
+            text-decoration: none;
+            color: white;
+        }
+        #menu {
+            background-color: transparent !important;
+        }
+        .nav-item{
+            padding: 2px 10px;
+            transition: transform .5s ease-in-out;
+            border-radius: 20px;
+        }
+        .nav-item:hover{
+            transform: scale(1.1);
+            background-color: var(--color2);
+            border-radius: 20px;
+            transition: 1s;
+        }
+        .slider {
+            min-height: 600px;
+            background-image: url('../../content/images/image1.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin-bottom: 5px;
+        }
+        .login{
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, .2);
+            margin-top: 10%;
+            padding: 4%;
+            color: white;
+            border-radius: 20px;
+        }
+        .form-control{
+            border-radius: 10px !important;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .btn1{
+            height: 50px;
+            border: none;
+            color: white;
+            font-weight: 700;
+            border-radius: 10px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .sicon{
+            height: 90px;
+            width: 90px;
+            background-color: var(--color2);
+            text-align: center !important;
+            line-height: 90px;
+            border-radius: 50%;
+            font-size: 40px;
+            color: white;
+        }
+        .aicon {
+            height: 70px !important;
+            width: 70px !important;
+            line-height: 70px !important;
+            font-size: 35px !important;
+        }
+        .sec_heading{
+            font-size: 18px;
+            text-decoration: 2px dashed underline;
+        }
+        .about3 {
+            background-color: var(--color4);
+            text-align: center;
+            border-radius: 15px;
+            transition: all .8s;
+        }
+        .about3:hover{
+            color: white;
+            background-color: var(--color2);
+            transition: all 1s;
+            transform: translateY(-6px);
+        }
+        .bfoottxt{
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+        }
+            .bfoottxt:hover {
+                color: var(--color1);
+                font-size: 16px;
+                transition: all .6s;
+            }
+        .logo {
+            height: 40px;
+        }
+
+            .logo:hover {
+                transition: all 1.2s;
+                transform: translateY(3px);
+            }
+        .btn:hover{
+            background-color: var(--color2);
+        }
+        .overlay-top::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 85px;
+            left: 0;
+            z-index: 1;
+        }
+        .overlay-top::before {
+            top: 0;
+            background: url(/Content/images/overlay-top.png) top center no-repeat;
+            background-size: contain;
+        }
+        .bgform {
+            background-image: linear-gradient(to bottom left, rgba(85, 125, 203, .4), rgba(280, 143 , 80, .2));
+            border-radius: 10px;
+        }
+        .faqs{
+            margin-top: 10px;
+            padding: 30px 0px;
+        }
+        .bgcontact{
+            background-image: linear-gradient(to bottom left, rgba(245, 240, 235, .3), rgba(85, 125, 200, .1));
+            border-radius: 10px;
+        }
+        .fic{
+            font-size: 25px;
+            color: white;
+            background-color: var(--color2);
+            border-radius: 50%;
+            padding: 23%;
+        }
+        .card:hover {
+            color: white;
+            background-color: var(--color2);
+            transition: all 1s;
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row t1 bg-dark text-light text-center py-3">
+            <div class="col-sm-4">
+                <a href="#faq">FAQs</a> |
+                <a href="#contact">Contact & Support</a> |
+                <a href="#register" class="txt-mycolor2">Sign Up</a> |
+                <a href="#slider" class="txt-mycolor2">Sign In</a> |
+            </div>
+            <div class="col-sm-4">
+                Welcome to my Learning Management Softweare
+            </div>
+            <div class="col-sm-4">
+                <a href="https://www.facebook.com/techpilelko" title="Facebook"><i class="fa-brands fa-facebook ic"></i></a>
+                <a href="https://twitter.com/techpileL" title="Twitter"><i class="fa-brands fa-twitter ic"></i></a>
+                <a href="https://www.youtube.com/techpilelko" title="Youtube"><i class="fa-brands fa-youtube ic"></i></a>
+                <a href="https://www.instagram.com/tptlko/" title="Instagram"><i class="fa-brands fa-square-instagram ic"></i></a>
+                <i class="fa-brands fa-linkedin ic"></i>
+            </div>
+        </div>
+        <div class="row my-1 mx-3">
+            <!--Start Header-->
+            <div class="col-sm-3 m-0 py-0 float-end">
+                    <img src="~/Content/images/EduMaxLogo.png" height="75" />
+                    </div>
+                    <div class="col-sm-6 my-auto">
+                        <!--Start Menu--> 
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+                            <div class="container-fluid">
+                                
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#"> Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#aboutus">About Us</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#ourteam">Our Team</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#register">Register</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#faq">FAQs</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#contact">Contact Us</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/home/adminlogin">Admin Login</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!--End Menu-->
+                    </div>
+                    <div class="col-sm-2 my-auto text-center">
+                        <i class="fa-solid fa-envelope txt-mycolor2"></i><b> Mail Us</b><br />techpilelko@gmail.com
+                    </div>
+                    <div class="col-sm-1 my-auto text-center">
+                        <i class="fa-solid fa-phone txt-mycolor2"></i> <b> Call Us</b><br />7007237006
+                    </div>
+            <!--End Header-->
+        </div>
+        <div class="row t3 bg-mycolor1">
+           <div class="col-sm-3"></div>
+           <div class="col-sm-6"></div>
+           <div class="col-sm-3"></div>
+        </div>
+        <div class="row slider" id="slider">
+            <div class="col-sm-12 shadow-lg" style="background-color: rgba(0, 0, 0, .4)">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <!--Start Content-->
+                            <div class="col-sm-7 text-light">
+                                <div class="fs-1" style="line-height:45px; margin-top: 18%;">
+                                    Learn<b class="txt-mycolor2"> 200+</b><br />
+                                    Best online courses from <br />EduMax<b class="txt-mycolor2"> Learning</b>
+                                </div>
+                                <b>Learn from Best Instructure</b><br />
+                                <i>Training || Development || Placement</i><br /><br />
+                                <a href="#register" class="btn bg-mycolor4 text-light">Register <i class="fa-solid fa-sign-in"></i></a>
+                            </div>
+                            <!--End Content-->
+                            <!--Start Login Form-->
+                            <div class="col-sm-5 login">
+                                <form action="/home/login" method="post">
+                                    Username:<br />
+                                    <input type="email" class="form-control shadow mb-3 bg-body-tertiary" name="email" placeholder="Username" />
+                                    Password:<br />
+                                    <input type="password" class="form-control shadow mb-3 bg-body-tertiary" name="passwd" placeholder="Password" />
+                                    <input type="submit" class="btn1 btn bg-mycolor4" value="Login" />
+                                </form>
+                            </div>
+                            <!--End Login Form-->
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Start AboutUs-->
+        <div class="row aboutus py-5 shadow-lg" id="aboutus">
+            <div class="text-center mb-3" style="line-height:20px !important;">
+                <p class="fs-3">About <b class="txt-mycolor2">Us..<i class="fa-solid fa-user"></i></b></p>
+            </div>
+            <!--Start AboutUs Content-->
+            <div class="row my-3">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="row shadow-sm">
+                        <div class="col-sm-6 p-3">
+                            <div class="row me-1">
+                                <b class="txt-mycolor2 sec_heading mb-2">About Us</b><br />
+                                <b style="font-size:35px; font-weight:600; font-family:'Times New Roman', Times, serif;">First Choice For Online Education Anywhere</b>
+                            </div>
+                            <div class="row my-1">
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Welcome to EduMax Laerning At Lucknow, we believe in the power of education to transform lives. Our mission is to provide a comprehensive and user-friendly platform that empowers learners, educators, and organizations to achieve their educational goals through innovative technology and exceptional content.</p>
+                            </div>
+                            <div class="row my-1">
+                                <b class="txt-mycolor2 sec_heading mb-2">Our Mission</b><br />
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Our mission is to make learning accessible, engaging, and effective for everyone. We strive to bridge the gap between traditional and digital education by offering a versatile Learning Management System that supports a wide range of learning styles and educational needs. Whether you're a student aiming to expand your knowledge, an instructor looking to deliver dynamic courses, or an organization seeking to train and upskill your team, [Your LMS Name] is here to help you succeed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6 my-4 ps-5"><img src="~/Content/images/blog-1.jpg" alt="" class="shadow-lg" height="500" width="500" style="border-radius: 50%; padding: 10px; background-color: floralwhite;"/></div>   <!--Image-->
+                    </div>
+                    <div class="row shadow-sm">
+                        <div class="col-sm-6 p-5">
+                            <img src="~/Content/images/vision.jpg" alt="" class="shadow-lg" height="420" width="420" style="border-radius: 50%; border-radius: 50%; padding: 10px; background-color: floralwhite;"/>
+                        </div>
+                        <div class="col-sm-6 mt-4 py-5 px-3">
+                            <b class="txt-mycolor2 sec_heading mb-2">Our Vision</b><br />
+                            <p class="mt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Vision is to be a leading Web Solution company in IT sector and progress in our current position in market. We know that Customer's growth is our growth, so we commit our customers to help in achieving their business goals. We believe in work with the accuracy and best quality.</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2U believes in the power of high-quality online education to create a better future for all. Through EduMax, our online learning platform, we see a world where learners everywhere have access to…</p>
+                            <ul class="ms-3">
+                                <li>Expert-led educational experiences.</li>
+                                <li>Flexible pathways to personal and professional achievement.</li>
+                                <li>Educational opportunities at every investment level.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row my-3 shadow-sm mb-2">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-sm-3 p2">
+                            <div class="about3 p-3">
+                                <i class="fa-solid fa-graduation-cap py-1 fa-4x"></i><br />
+                                <b class="py-1 fa-1x">Skilled Instructors</b>
+                                <p>hii  Dynamic Solution in Softeare and Web Development Service</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 p2">
+                            <div class="about3 p-3">
+                                <i class="fa-solid fa-globe py-1 fa-4x"></i><br />
+                                <b class="py-1 fa-1x">Online Classes</b>
+                                <p>hii  Dynamic Solution in Softeare and Web Development Service</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 p2">
+                            <div class="about3 p-3">
+                                <i class="fa-solid fa-home-alt py-1 fa-4x"></i><br />
+                                <b class="py-1 fa-1x">Home Project</b>
+                                <p>hii  Dynamic Solution in Softeare and Web Development Service</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 p2">
+                            <div class="about3 p-3">
+                                <i class="fa-solid fa-book-atlas py-1 fa-4x"></i><br />
+                                <b class="py-1 fa-1x">Book Library</b>
+                                <p>hii  Dynamic Solution in Softeare and Web Development Service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 p-4 shadow-sm">
+                    <div class="text-center mb-3" style="line-height:20px !important;">
+                        <p class="fs-3">Why <b class="txt-mycolor2">EduMax..<i class="fa-solid fa-person-circle-question"></i></b></p>
+                        <b class="fs-5 mb-5">Here is the future of distant learning</b>
+                    </div>
+                    <div class="row my-5">
+                        <div class="col-sm-3 ms-5">
+                            <div class="card p-2 shadow-lg">
+                                <div class="row my-2">
+                                    <div class="col-3"><img src="~/Content/images/rocket.svg" height="50" width="50"></div>
+                                    <div class="col-9"><b class="fs-5">Learn the latest top skills</b></div>
+                                </div>
+                                <div class="row my-2">
+                                    <p>Explore all of our courses and pick your suitable ones to enroll and start learning.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            <div class="card p-2 shadow-lg">
+                                <div class="row my-2">
+                                    <div class="col-3"><img src="~/Content/images/video-conference.svg" height="50" width="50"></div>
+                                    <div class="col-9"><b class="fs-5">Video Lectures</b></div>
+                                </div>
+                                <div class="row my-2">
+                                    <p>Explore all of our courses and pick your suitable ones to enroll and start learning.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            <div class="card p-2 shadow-lg">
+                                <div class="row my-2">
+                                    <div class="col-3"><img src="~/Content/images/goal.svg" height="50" width="50"></div>
+                                    <div class="col-9"><b class="fs-5">Learn the latest top skills</b></div>
+                                </div>
+                                <div class="row my-2">
+                                    <p>Explore all of our courses and pick your suitable ones to enroll and start learning.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <!--End AboutUs Content-->
+        </div>
+        <!--End AboutUs-->
+
+        <!--Start Out Team-->
+        <div class="row py-5 shadow-lg" id="ourteam">
+            <div class="text-center mb-3" style="line-height:20px !important;">
+                <p class="fs-3">Our <b class="txt-mycolor2">Team..<i class="fa-solid fa-users"></i></b></p>
+            </div>
+            <div class="col-sm-3" style="margin-left: 95px;">
+                <div class="card p-1" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Content/images/team-1.jpg" alt="Director">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Director</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="card p-1" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Content/images/team-2.jpg" alt="Managing Director">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Managing Director</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="card p-1" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Content/images/team-3.jpg" alt="Project Manager">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Project Manager</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Out Team-->
+
+        <div class="row regitser py-5" id="register">
+            <div class="text-center" style="line-height:20px !important;">
+                <p class="fs-3">Register <b class="txt-mycolor2">Here..<i class="fa-solid fa-user-plus"></i></b></p>
+                shadows on components are disabled by default in Bootstrap and can be enabled via $enable-shadows
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="row mt-1">
+                            <img src="~/Content/images/register.jpg" class="m-4 p-2 shadow-lg" style="height:580px; width:450px;" />
+                        </div>
+                    </div>
+                    <!--Start Registration Form-->
+                    <div class="col-sm-7 p-5 mt-3 bgform" style="border-radius: 20px;">
+                        <form action="/home/savestddata" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Name:<br /><input type="text" name="name" placeholder="Name.." class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                                <div class="col-sm-6">
+                                    Email:<br /><input type="email" name="email" placeholder="Email.." class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Mobile:<br /><input type="text" name="mobile" placeholder="Mobile.." class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                                <div class="col-sm-6">
+                                    Profile Picture:<br /><input type="file" name="profile" placeholder="Profile Picture.." class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Course & Branch:<br /><select name="branch" class="form-control mb-3 shadow bg-body-tertiary border-0">
+                                        <option>--Select Course--</option>
+                                        <option value="DiplomaCS/IT">Diploma (CS/IT)</option>
+                                        <option value="B.TechCS/IT">B.Tech (CS/IT)</option>
+                                        <option value="bca">BCA</option>
+                                        <option value="M.TechCS/IT">M.Tech (CS/IT)</option>
+                                        <option value="mca">MCA</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    Year:<br /><select name="year" class="form-control mb-3 shadow bg-body-tertiary border-0">
+                                        <option value="">--Select Year--</option>
+                                        <option value="firstYear">First Year</option>
+                                        <option value="secondYear">Second Year</option>
+                                        <option value="thirdYear">Third Year</option>
+                                        <option value="fourthYear">Fourth Year</option>
+                                        <option value="passedOut">Passed Out</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Batch:<br /><select name="batch" class="form-control mb-3 shadow bg-body-tertiary border-0">
+                                        <option value="">--Select Batch--</option>
+                                        @if (ViewBag.table1.Rows.Count > 0)
+                                        {
+                                            foreach (var row in ViewBag.table1.Rows)
+                                            {
+                                                <option value="@row[0]">@row[1]</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    Password:<br /><input type="password" name="passwd" placeholder="Password.." class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <br /><input type="submit" class="btn form-control shadow-lg bg-mycolor4 border-3 w-50 fs-5" style="font-weight:700;" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--End Registration Form-->
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    <!--Start FAQs-->
+        <div class="row faqs shadow-lg" id="faq">
+            <div class="text-center mb-3" style="line-height:20px !important;">
+                <p class="fs-3">General <b class="txt-mycolor2">FAQs..<i class="fa-solid fa-person-circle-question"></i></b></p>
+            </div>
+            <div class="col-sm-7 mx-3">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item shadow-sm my-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                What is EduMax Learning?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">EduMax Learning is an online platform designed to facilitate learning and training. It allows educators to create, manage, and deliver courses, while providing tools for students to engage with course materials and track their progress.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item shadow-sm my-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                What should I do if I forget my password?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Click on the “Forgot Password” link on the login page. Follow the instructions to reset your password. You will need access to the email address associated with your account.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item shadow-sm my-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                How can I access my course materials?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Once enrolled, go to your dashboard, select the course from your list, and you’ll be directed to the course materials, including lectures, readings, and assignments.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item shadow-sm my-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                How do I submit assignments?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Access the assignment section within your course. Follow the instructions to upload your work. Ensure that your submission meets the format and deadline requirements specified by the instructor.
+                                Creating an FAQ for a Learning Management System (LMS) involves covering a range of topics to help users navigate the system effectively. Here’s a general template you might use:
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item shadow-sm my-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                How can I access my course materials?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Once enrolled, go to your dashboard, select the course from your list, and you’ll be directed to the course materials, including lectures, readings, and assignments.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item shadow-sm my-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                How do I submit assignments?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Access the assignment section within your course. Follow the instructions to upload your work. Ensure that your submission meets the format and deadline requirements specified by the instructor.
+                                Creating an FAQ for a Learning Management System (LMS) involves covering a range of topics to help users navigate the system effectively. Here’s a general template you might use:
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 py-3 px-auto">
+                <img src="~/Content/images/faq.jpg" alt="" height="400" width="400"/>
+            </div>
+        </div>
+    <!--End FAQs-->
+    <!--Start Contact Us-->
+        <div class="container-fluid shadow-lg m-0 p-0 w-100">
+            <div class="row contactus my-5 pt-3" id="contact">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="row text-center mb-3" style="line-height:20px !important;">
+                        <p class="fs-3">Contact <b class="txt-mycolor2">Us..<i class="fa-solid fa-address-book"></i></b></p>
+                    </div>
+                    <!--Start Form-->
+                    <div class="row m-3">
+                        <div class="col-sm-6 p-5 bgform">
+                            <div class="row my-2 p-1">
+                                <b class="txt-mycolor2 sec_heading mb-2"> Message Us </b><br />
+                                <b style="font-size:40px; font-weight:600; font-family:'Times New Roman';">Have Any Question in Mind? <br /> Message Us...</b>
+                            </div>
+                            <form action="/home/savecontact" method="get">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="name">Name:</label>
+                                        <input type="text" name="txt_name" id="name" class="form-control" placeholder="Enter your name.." />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="mobile">Mobile Number:</label>
+                                        <input type="number" name="num_mobile" id="mobile" class="form-control" placeholder="Enter Your mobile number.." />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <lable for="email">Email Id:</lable>
+                                        <input type="email" name="txt_email" id="email" class="form-control" placeholder="Enter your email is.." />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <lable for="topic">Topic:</lable>
+                                        <input type="text" name="txt_topic" id="topic" class="form-control" placeholder="Enter message topic.." />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="message">Message:</label>
+                                    <textarea name="txt_message" id="message" rows="4" placeholder="Enter your message.." class="form-control mx-2" style="height: 130px !important; width: 97%;"></textarea>
+                                </div>
+                                <div class="row">
+                                    <button type="submit" class="btn1 btn bg-mycolor2 w-75 text-center m-3 mx-auto fs-4" value="send messaage">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End Form-->
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5 p-5 bgcontact">
+                            <div class="row my-2 p-1">
+                                <b class="txt-mycolor2 sec_heading mb-2"> Contact Detail </b><br />
+                                <b style="font-size:40px; font-weight:600; font-family:'Times New Roman';">Get IN Touch...</b>
+                                <p>Have a inquiry or some feedback for us? Reach out us by contacting below to connect our team.</p>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-4">
+                                    <i class="fa-solid fa-map-location fic"></i>
+                                </div>
+                                <div class="col-8">
+                                    <h5 style="font-weight:600; font-family:'Times New Roman'">Our Address</h5>
+                                    <b>Plot No-43, Behind H.P Petrol Pump,Tedhi Pulia Ring Rd, Sector 5,Vikas Nagar, Lucknow,Uttar Pradesh 226022</b>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-4">
+                                    <i class="fa-solid fa-phone-volume fic"></i>
+                                </div>
+                                <div class="col-8 my-auto">
+                                    <h5 style="font-weight:600; font-family:'Times New Roman'">Phone No.</h5>
+                                    <b>+91-7007237006 <br />+91-9140444301</b>
+                                </div>
+                            </div>
+                            <div class="row my-5">
+                                <div class="col-4">
+                                    <i class="fa-solid fa-envelope fic"></i>
+                                </div>
+                                <div class="col-8 my-auto">
+                                    <h5 style="font-weight:600; font-family:'Times New Roman'">Email Address</h5>
+                                    <b>techpilelko@gmail.com</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" style="height: 400px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.161301648797!2d80.96384467548143!3d26.898375476655733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995785d5f7f1a5%3A0xffa47f1efe103f0d!2sTechpile%20Technology%20Pvt.%20Ltd.%20%7C%7C%20Internet%20website%20developers!5e0!3m2!1sen!2sin!4v1727151671469!5m2!1sen!2sin" style="height:100%; width:100%; border:10px;" allo wfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+    <!--End Contact Us-->
+        <div class="row ufooter position-relative overlay-top bg-dark">
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-muted">
+                <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5 pt-2" style="color: white;">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h3 class="text-uppercase fw-bold mb-4">
+                                    <i class="fas fa-gem me-3"></i>EduMax <b class="txt-mycolor1">Learning</b>
+                                </h3>
+                                <address>
+                                    <b class="fs-4 text-decoration-underline">Add:</b> Plot No-43, Behind H.P Petrol Pump,Tedhi Pulia Ring Rd, Sector 5,Vikas Nagar, Lucknow,Uttar Pradesh 226022<br>
+                                    <b class="fs-4 text-decoration-underline">Call:</b> +91-7007237006, +91-9140444301<br>
+                                    <b class="fs-4 text-decoration-underline">Email:</b> techpilelko@gmail.com<br>
+                                </address>
+                            </div>
+                            <!-- Grid column -->
+                            
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Useful links
+                                </h6>
+                                <p>
+                                    <a href="#aboutus" class="text-reset">About</a>
+                                </p>
+                                <p>
+                                    <a href="#contact" class="text-reset">Contact Us</a>
+                                </p>
+                                <p>
+                                    <a href="#course" class="text-reset">Courses</a>
+                                </p>
+                                <p>
+                                    <a href="#" class="text-reset">Instructor Profile</a>
+                                </p>
+                                <p>
+                                    <a href="#faq" class="text-reset">FAQs</a>
+                                </p>
+                                <p>
+                                    <a href="#register" class="text-reset">Sign In/Registration</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Coming Soon</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto  mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">Contacts</h6>
+                                <p>Enter your email address to register to our newsletter subscription.</p>
+                                <input type="email" name="email" placeholder="Your Email">
+                                <input type="submit" class="btn bg-mycolor2" value="Subscribe &rarr;">
+                                <div class="row">
+                                    <div class="col-sm-12 m-2 p-2">
+                                        <a href="https://www.instagram.com/tptlko/"><img src="~/Content/images/logo/instagram.png" class="logo" alt="Instagram Logo"></a>
+                                        <a href="https://www.youtube.com/techpilelko"><img src="~/Content/images/logo/youtube.png" class="logo" alt="Youtube Logo"></a>
+                                        <a href="#"><img src="~/Content/images/logo/linedin.png" class="logo" alt="Linkedin Logo"></a>
+                                        <a href="https://twitter.com/techpileL"><img src="~/Content/images/logo/twitter.png" class="logo" alt="Twitter Logo"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                    </div>
+                </section>
+                <!-- Section: Links  -->
+                <!-- Copyright -->
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </div>
+        <!--Start Bottom Footer-->
+        <div class="row bfooter bg-dark py-2">
+            <div class="col-sm-6 text-center">
+                <a href="#" class="bfoottxt">Doveloped By: <b>Vishvajeet Sharma</b></a>
+            </div>
+            <div class="col-sm-6 text-center">
+                <a href="https://techpile.in" class="bfoottxt" target="_blank">&copy; Techpile Technology Pvt.Ltd.</a>
+            </div>
+        </div>
+        <!--End Bottom Footer-->
+    
+    </div>
+    <script src="~/Content/js/bootstrap.bundle.js"></script>
+</body>
+</html>

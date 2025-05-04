@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Course";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+<style>
+    .card {
+        transition: all ease 1s
+    }
+
+        .card:hover {
+            transform: scale(1.08);
+            transition: 1.5s
+        }
+</style>
+<div class="container">
+    <div class="fs-3 my-2 text-center">My <b class="txt-mycolor2">Courses</b></div>
+    <div class="row">
+        @if(ViewBag.cat.Rows.Count > 0)
+         {
+                foreach(var row in ViewBag.cat.Rows)
+                {
+
+                    <div class="col-sm-3">
+                        <a href="/student/videolecture?catid=@row[0]">
+                            <div class="card mx-auto border-0 shadow-lg position-relative p-2">
+                                <img src="~/Content/categorypic/@row["ThumbNail"]" class="card-img-top img-fluid" alt="ThumbNail Not Found!">
+                                <div class="position-absolute top-3 start-3 batch bg-mycolor2 rounded-2">@row["Date"]</div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">@row["CetegoryName"]</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+         }
+    </div>
+</div>
+

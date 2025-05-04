@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Notes";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head>
+    <title>Notes</title>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row fs-3 pt-1 m-3 text-center"> <span>Add and Manage <b class="txt-mycolor1">Batches</b></span></div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-md-8">
+                <div class="form-container">
+                    <h4 class="mb-4">Add <b class="txt-mycolor2">Notes</b></h4>
+                    <form action="/admin/savenotes" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="notesTitle" class="form-label">Title of Notes:</label>
+                            <input type="text" class="form-control" id="notesTitle" name="txt_title" placeholder="Enter Title of Notes..." required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descNotes" class="form-label">Description of Notes:</label>
+                            <textarea type="text" class="form-control" id="descNotes" name="txt_desc" placeholder="Enter Description of Notes..." rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="uploadedBy" class="form-label">Uploaded By:</label>
+                            <input type="text" class="form-control" id="uploadedBy" name="txt_teacher" placeholder="Enter Teacher Name.." required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fileNotes" class="form-label">Notes File:</label>
+                            <input type="file" name="file_notes" id="fileNotes" class="form-control" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="batch_dropdoun">Batch:</label>
+                            <select name="ddl_batch" id="batch_dropdoun" required class="form-control mb-3 shadow bg-body-tertiary border-0">
+                                <option value="">---Select Batch---</option>
+                                @if (ViewBag.table1.Rows.Count > 0)
+                                {
+                                    foreach (var row in ViewBag.table1.Rows)
+                                    {
+                                        <option value="@row[0]">@row[1]</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn bg-mycolor2">Add Notes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</body>
+
+

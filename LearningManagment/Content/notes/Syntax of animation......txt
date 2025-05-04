@@ -1,0 +1,24 @@
+Syntax of animation.....
+
+@keyframes  animationName
+{
+    from | 0%
+    {
+        property:value;
+        property:value;
+    }
+    to | 100%{
+        property:value;
+        property:value;
+    }
+}
+
+------------------------------------------
+animation-name: animationName;
+animation-duration: time in sec | 5s |
+animation-iteration: count:number | infinite
+animation-diration: normal(feom-to) | reverse(to-from) | alternate(from-to to-from....) | alternate-reverse(to-from from-to...)
+animation-play-state: running | pushed
+animation-delay: time in sec 
+animation-play-state: running | pushed | 
+

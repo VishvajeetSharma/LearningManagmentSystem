@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "VideoLecture";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+
+<style>
+    .btnplay {
+        top: 45%;
+        left: 45%;
+    }
+
+    .ico {
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    .btnfix {
+        bottom: 5%;
+        right: 2%;
+        border-radius: 3px;
+    }
+</style>
+
+<div class="container">
+    <div class="fs-3 text-center">Video <b class="txt-mycolor2">Lectures</b></div>
+    <div class="row">
+        @if (ViewBag.video.Rows.Count > 0)
+        {
+            foreach (var row in ViewBag.video.Rows)
+            {
+                <div class="col-sm-4">
+                    <div class="card mx-auto border-0 shadow-lg p-2" style="width: 20rem;">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="position-relative">
+                                <img src="~/Content/videopic/@row[6]" class="card-img-top img-fluid" alt="Html pic" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setimg('@row[5]')"/>
+                                <div class="position-absolute top-0 start-0 batch bg-mycolor2 rounded-2">EduMax</div>
+                                <div class="position-absolute btnplay"><i class="fa-solid fa-circle-play fs-2 bg-light"></i></div>
+                                <div class="position-absolute btnfix bg-mycolor2 text-light px-1">@row[7]</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">@row[1]</h5>
+                                <p>@row[4]</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>NO VIDOE FOUND!</strong> Admin has not uploaded any video for your batch in this category till date. Please wait.....
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+    </div>
+ 
+</div>
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <iframe id="videoframe"  width="100%" height="400px" src="https://www.youtube.com/embed/p5rQfaYX_AI?si=njOT-XD0jIYNF5hx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setimg(link) {
+        //alert(link)
+        document.getElementById("videoframe").src = link;
+    }
+</script>

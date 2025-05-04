@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Notes";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+
+<div  class="container">
+    <div class="row">
+        <div class="text-center fs-3">Lecture <b class="txt-mycolor2">Notes</b></div>
+        @if (ViewBag.notes.Rows.Count > 0)
+        {
+            foreach (var row in ViewBag.notes.Rows)
+            { 
+                <div class="col-sm-3">
+                    <div class="card p-3 border-0 shadow-lg">
+                        <h4 class="card-title">@row["title"]</h4>
+                        <p>@row["description"]</p>
+                        <a href="~/Content/notes/@row["notesfile"]" class="btn bg-mycolor2 text-center"><i class="fa-solid fa-download"></i> Download</a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
